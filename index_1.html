@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nelsen Verian | Personal Profile & Interactive Portfolio</title>
+  <meta name="description"
+    content="Website Profil Pribadi & Portofolio Interaktif Nelsen Verian - Mahasiswa FMIPA Universitas Tanjungpura Angkatan 2026.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Canvas Confetti Library for Celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Ambient Animated Background -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Notification Banner / Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">Website</span>
+        <span class="brand-bracket">/&gt;</span>
+        <span class="status-dot" title="Mode Kreatif Aktif"></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> Tentang</a>
+        <a href="#experience" class="nav-link"><i class="fa-solid fa-timeline"></i> Riwayat</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Karya</a>
+        <a href="#gallery" class="nav-link"><i class="fa-solid fa-images"></i> Galeri</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Kontak</a>
+      </nav>
+
+      <!-- Nav Actions & Controls -->
+      <div class="nav-controls">
+        <!-- Sound FX Toggle -->
+        <button class="icon-btn" id="audioToggle" title="Suara SFX: Aktif" aria-label="Toggle Sound Effects">
+          <i class="fa-solid fa-volume-high" id="audioIcon"></i>
+        </button>
+
+        <!-- Easter Egg Counter Button -->
+        <button class="egg-counter-btn" id="eggCounterBtn" title="Easter Egg yang ditemukan">
+          <i class="fa-solid fa-egg"></i>
+          <span class="egg-count" id="eggFoundCount">0</span>/6
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <span class="brand-name">Menu Navigasi</span>
+      <button class="close-drawer-btn" id="closeDrawerBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#hero" class="mobile-link"><i class="fa-solid fa-house"></i> Beranda</a>
+      <a href="#about" class="mobile-link"><i class="fa-solid fa-user-astronaut"></i> Tentang Saya</a>
+      <a href="#experience" class="mobile-link"><i class="fa-solid fa-timeline"></i> Riwayat & Pendidikan</a>
+      <a href="#projects" class="mobile-link"><i class="fa-solid fa-laptop-code"></i> Proyek / Karya</a>
+      <a href="#gallery" class="mobile-link"><i class="fa-solid fa-images"></i> Galeri Foto</a>
+      <a href="#contact" class="mobile-link"><i class="fa-solid fa-paper-plane"></i> Kontak</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <div class="mobile-hint">
+        <i class="fa-solid fa-lightbulb"></i> Tips: Coba klik apapun yang bisa di-klik!
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+
+        <!-- Left: Text Content -->
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="pulse-indicator"></span>
+            <span>Mahasiswa FMIPA Universitas Tanjungpura • Angkatan 2026</span>
+          </div>
+
+          <h1 class="hero-title">
+            Halo, Selamat Datang! 👋<br>
+            Saya <span class="gradient-text glitch-hover" data-text="Nelsen Verian" id="heroName">Nelsen Verian</span>
+          </h1>
+
+          <div class="typewriter-container">
+            <span class="typewriter-static">Aku adalah </span>
+            <span class="typewriter-text" id="typewriter"></span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Selamat datang di website saya, terimakasih sudah melihat website saya. Dan silakan jelajahi sendiri seisi
+            website!
+          </p>
+
+          <!-- Quick Metadata Chips -->
+          <div class="meta-chips-group">
+            <div class="meta-chip" id="nimChip" title="Klik 3x untuk Easter Egg!">
+              <i class="fa-solid fa-id-card"></i>
+              <span>NIM: <strong>H1101261030</strong></span>
+            </div>
+            <div class="meta-chip">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Universitas Tanjungpura</span>
+            </div>
+            <div class="meta-chip">
+              <i class="fa-solid fa-atom"></i>
+              <span>FMIPA'26</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+            </a>
+            <a href="#gallery" class="btn btn-secondary">
+              <i class="fa-solid fa-compass"></i> Jelajahi
+            </a>
+            <button class="btn btn-ghost" id="secretModalOpenBtn">
+              <i class="fa-solid fa-key"></i> Petunjuk?
+            </button>
+          </div>
+
+          <!-- EVASIVE / RUNAWAY BUTTON ARENA -->
+          <div class="evasive-arena-card">
+            <div class="arena-header">
+              <span class="arena-badge"><i class="fa-solid fa-crosshairs"></i> Mini Game Refleks</span>
+              <span class="arena-score">Tangkap: <span id="evasiveAttempts">0</span>x lolos</span>
+            </div>
+            <p class="arena-subtitle">Ni tombol nakal asli, bisa pencet pake kursor gak? bukan buat hp ya. Kalau pake hp
+              awas lo ya</p>
+            <div class="evasive-playground" id="evasivePlayground">
+              <button class="btn btn-evasive" id="evasiveBtn">
+                <i class="fa-solid fa-person-running"></i> HANTAM AKU WAK!
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Profile Visual Display -->
+        <div class="hero-visual">
+          <div class="profile-card-wrapper" id="profileCardWrapper">
+            <!-- Decorative Orbit Rings -->
+            <div class="orbit-ring ring-1"></div>
+            <div class="orbit-ring ring-2"></div>
+
+            <div class="profile-card glass-panel" id="profileCard">
+              <div class="profile-img-box">
+                <img src="assets/photo/photo_1.jpeg" alt="Foto Profil Nelsen Verian" class="profile-avatar"
+                  id="mainHeroPhoto">
+                <div class="profile-overlay-glow"></div>
+                <div class="click-me-tag">
+                  <i class="fa-solid fa-hand-pointer"></i> Klik Aku!
+                </div>
+              </div>
+
+              <div class="profile-info-tag">
+                <div class="profile-name-row">
+                  <h3 class="profile-card-name">Nelsen Verian</h3>
+                  <span class="verified-icon" title="Profil Terverifikasi"><i
+                      class="fa-solid fa-circle-check"></i></span>
+                </div>
+                <p class="profile-card-status">FMIPA Tanjungpura • 2026</p>
+                <div class="profile-tags">
+                  <span class="tag-badge">Tukang Coba-Coba</span>
+                  <span class="tag-badge">Suka Buat Aneh-aneh</span>
+                  <span class="tag-badge">Anti-Boring, kayaknya</span>
+                </div>
+              </div>
+
+              <!-- Interactive Floating Bubble Reaction -->
+              <div class="reaction-bubble" id="profileReactionBubble">
+                <span class="bubble-text" id="profileReactionText">Halo! Jangan klik terlalu kencang ya 😉</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About Me">
+        <span class="scroll-text">Geser ke bawah</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+
+    <!-- ==================== 2. ABOUT ME ==================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-user"></i> Mengenal Lebih Jauh, maksudnya lebih dekat lagi!
+          </div>
+          <h2 class="section-title">Tentang <span class="gradient-text">Nelsen Verian?</span></h2>
+          <p class="section-subtitle">
+            Tidak ada yang menarik dari saya, terimakasih. Mau tau lebih dalam? Baca sendiri.
+          </p>
+        </div>
+
+        <!-- Bento Grid Layout for About Me -->
+        <div class="about-bento-grid">
+
+          <!-- Bento 1: Main Bio Story -->
+          <div class="bento-card bento-span-2 glass-panel">
+            <div class="bento-header">
+              <div class="bento-icon-box"><i class="fa-solid fa-book-open-reader"></i></div>
+              <h3>Cerita Singkat Saya</h3>
+            </div>
+            <p class="bento-text">
+              Hola teman, kakak, dan abang telah melihat website saya ini! Saya adalah mahasiswa angkatan 2026 di
+              <strong>Universitas Tanjungpura</strong>,
+              tepatnya di <strong>Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA), Program Studi Sistem
+                Informasi.</strong>
+              Saya adalah manusia biasa yang tinggal di bumi dan juga suka makan nasi, suka minum air, dan suka
+              berkelana kemanapun bisa saya berkelana.
+            </p>
+            <p class="bento-text">
+              Tidak usah banyak cing-cong, saya senang menantang diri dalam membuat desain yang berbeda dari template
+              umum. Filosofi saya:
+              <em>"Jika sebuah website bisa dibuat interaktif dan membuat orang tersenyum, kenapa harus dibuat
+                membosankan?"</em>
+            </p>
+            <div class="quote-box">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <span>Belajar teknologi bukan tentang menghafal sintaks, melainkan tentang cara memecahkan masalah dan
+                mengekspresikan ide.</span>
+            </div>
+          </div>
+
+          <!-- Bento 2: Academic Profile Badge -->
+          <div class="bento-card glass-panel bento-academic">
+            <div class="bento-header">
+              <div class="bento-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h3>Data Akademik</h3>
+            </div>
+            <ul class="academic-list">
+              <li>
+                <span class="data-label">Nama Lengkap</span>
+                <span class="data-val">Nelsen Verian</span>
+              </li>
+              <li>
+                <span class="data-label">NIM (Coba Klik 3x)</span>
+                <span class="data-val clickable-nim" id="nimClickable" title="Ada rahasia di sini!">H1101261030</span>
+              </li>
+              <li>
+                <span class="data-label">Universitas</span>
+                <span class="data-val">Universitas Tanjungpura</span>
+              </li>
+              <li>
+                <span class="data-label">Fakultas</span>
+                <span class="data-val">MIPA</span>
+              </li>
+              <li>
+                <span class="data-label">Angkatan</span>
+                <span class="data-val highlight-val">2026</span>
+              </li>
+            </ul>
+            <div class="nim-hint">
+              <small><i class="fa-solid fa-fingerprint"></i> Klik NIM 3 kali untuk menemukan sesuatu!</small>
+            </div>
+          </div>
+
+          <!-- Bento 3: IT Interests & Hobbies -->
+          <div class="bento-card glass-panel">
+            <div class="bento-header">
+              <div class="bento-icon-box"><i class="fa-solid fa-gamepad"></i></div>
+              <h3>Minat & Hobi</h3>
+            </div>
+            <div class="interests-grid">
+              <div class="interest-pill"><i class="fa-solid fa-bed"></i> Tidur</div>
+              <div class="interest-pill"><i class="fa-solid fa-bowl-rice"></i> Makan</div>
+              <div class="interest-pill"><i class="fa-solid fa-couch"></i> Rebahan</div>
+              <div class="interest-pill"><i class="fa-solid fa-compass"></i> Berkelana</div>
+              <div class="interest-pill"><i class="fa-solid fa-flask-vial"></i> Bereksperimen Aneh-Aneh</div>
+              <div class="interest-pill"><i class="fa-solid fa-mug-hot"></i> Ngopi Sambil Mikir Sesuatu</div>
+            </div>
+          </div>
+
+          <!-- Bento 4: Technical & Soft Skills -->
+          <div class="bento-card bento-span-2 glass-panel">
+            <div class="bento-header">
+              <div class="bento-icon-box"><i class="fa-solid fa-bolt"></i></div>
+              <h3>Keahlian & Kemampuan yang Ditekuni</h3>
+            </div>
+            <div class="skills-container">
+              <!-- Skill Bars -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Jalan-Jalan Tidak Jelas</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 95%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Tidur</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 90%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Ngantuk</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Makan Nasi</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 92%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Jadi Ultraman</span>
+                  <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 88%;"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>SUKA INOVASI ANEH-ANEH🔥🔥🔥</span>
+                  <span class="skill-percent">99%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 99%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 5: Mystery Chest Card (Easter Egg #3 trigger) -->
+          <div class="bento-card glass-panel mystery-bento" id="mysteryBento">
+            <div class="mystery-badge"><i class="fa-solid fa-triangle-exclamation"></i> Zona Terlarang</div>
+            <div class="mystery-content">
+              <div class="chest-icon"><i class="fa-solid fa-box-archive" id="chestIcon"></i></div>
+              <h4>Peti Kemalasan</h4>
+              <p>Tombol ini dilindungi kode rahasia. Jadi jangan pencet!</p>
+              <button class="btn btn-warning-glow" id="mysteryChestBtn">
+                <i class="fa-solid fa-lock-open"></i> Buka Paksa Peti!
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 3. EXPERIENCE & EDUCATION ==================== -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-clock-rotate-left"></i> Jejak Langkah</div>
+          <h2 class="section-title">Riwayat & <span class="gradient-text">Pengalaman</span></h2>
+          <p class="section-subtitle">
+            Perjalanan pendidikan, keikutsertaan organisasi, kepanitiaan, dan langkah-langkah menuju masa depan.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-period">2026 - Sekarang</span>
+                <span class="timeline-badge current">Pendidikan Aktif</span>
+              </div>
+              <h3 class="timeline-title">Universitas Tanjungpura (UNTAN)</h3>
+              <h4 class="timeline-sub">Mahasiswa Fakultas MIPA — Angkatan 2026</h4>
+              <p class="timeline-desc">
+                Menempuh jenjang pendidikan tinggi di Universitas Tanjungpura. Berfokus mendalami ilmu komputasi,
+                pemrograman web modern, basis data, perancangan sistem, serta berkolaborasi dalam proyek-proyek
+                inovatif.
+              </p>
+              <div class="timeline-tags">
+                <span>FMIPA</span>
+                <span>Sedang Belajar</span>
+                <span>Mau Mencoba</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-period">2024 - 2025</span>
+                <span class="timeline-badge">Organisasi/Kepanitiaan</span>
+              </div>
+              <h3 class="timeline-title">Tidak ada</h3>
+              <h4 class="timeline-sub">tidak ada</h4>
+              <p class="timeline-desc">
+                Sebagai orang tidak punya pengalaman dalam organisasi maupun kepanitiaan, ya memang gada.
+              </p>
+              <div class="timeline-tags">
+                <span>Mau Mencoba</span>
+                <span>Coba</span>
+                <span>Dan Terus Mencoba</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-period">2023 - 2024</span>
+                <span class="timeline-badge">Eksplorasi Mandiri</span>
+              </div>
+              <h3 class="timeline-title">Fase Eksplorasi Mandiri</h3>
+              <h4 class="timeline-sub">Waktu Memikirkan Nasib Masa Depan</h4>
+              <p class="timeline-desc">
+                Waktu SMP menuju SMA, merupakan masa paling menyenangkan, untuk mencoba sesuatu yang aneh-aneh, meskipun
+                aneh tetapi menyenangkan.
+              </p>
+              <div class="timeline-tags">
+                <span>MTK Penting🔥</span>
+                <span>Komputer</span>
+                <span>Main Game</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-period">Prestasi & Milestone</span>
+                <span class="timeline-badge success">Pencapaian</span>
+              </div>
+              <h3 class="timeline-title">Peluncuran Portfolio Anti-Mainstream</h3>
+              <h4 class="timeline-sub">Personal Project Showcasing Innovation & Fun</h4>
+              <p class="timeline-desc">
+                Menciptakan ruang portofolio digital yang tidak kaku, memadukan kaidah desain web standar dengan
+                elemen gamifikasi, easter eggs, interaktivitas tak terduga, dan struktur file yang rapi.
+              </p>
+              <div class="timeline-tags">
+                <span>Originality Buatan AI🗿</span>
+                <span>Interactive UX</span>
+                <span>Full Responsive</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 4. PROJECTS / KARYA ==================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-code"></i> Portofolio & Kreasi</div>
+          <h2 class="section-title">Karya & <span class="gradient-text">Akademik</span></h2>
+          <p class="section-subtitle">
+            Kumpulan proyek yang mengombinasikan fungsionalitas, estetika desain, dan sentuhan interaktif.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <div class="project-card glass-panel">
+            <div class="project-img-wrapper">
+              <div class="project-badge">Featured 🚀</div>
+              <div class="project-mockup mockup-1">
+                <i class="fa-solid fa-wand-magic-sparkles mockup-icon"></i>
+                <div class="mockup-code-lines">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                  <span class="line-3"></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>HTML5</span>
+                <span>Vanilla CSS</span>
+                <span>Web Audio</span>
+              </div>
+              <h3 class="project-title">Anti-Mainstream Interactive Space</h3>
+              <p class="project-desc">
+                Website profil interaktif dengan fitur kustom cursor, dynamic meme generator pada klik acak,
+                tombol evasive kabur, sistem easter egg, serta layout responsif bento grid.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-outline preview-project-btn" data-project="1">
+                  <i class="fa-solid fa-eye"></i> Detail Proyek
+                </button>
+                <a href="#hero" class="btn btn-sm btn-ghost">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Disini
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card glass-panel">
+            <div class="project-img-wrapper">
+              <div class="project-badge">Concept UI</div>
+              <div class="project-mockup mockup-2">
+                <i class="fa-solid fa-graduation-cap mockup-icon"></i>
+                <div class="mockup-code-lines">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>UNTAN</span>
+                <span>HTML</span>
+                <span>mahasiswa</span>
+              </div>
+              <h3 class="project-title">Pelajar UNTAN</h3>
+              <p class="project-desc">
+                Pelajar UNTAN yang mencoba untuk menjadi inovatif.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-outline preview-project-btn" data-project="2">
+                  <i class="fa-solid fa-eye"></i> Detail
+                </button>
+                <a href="https://untan.ac.id" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Portal UNTAN
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card glass-panel">
+            <div class="project-img-wrapper">
+              <div class="project-badge">Audio Experiment</div>
+              <div class="project-mockup mockup-3">
+                <i class="fa-solid fa-music mockup-icon"></i>
+                <div class="mockup-code-lines">
+                  <span class="line-1"></span>
+                  <span class="line-2"></span>
+                  <span class="line-3"></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>Web Audio API</span>
+                <span>Synthesis</span>
+                <span>JS Sound</span>
+              </div>
+              <h3 class="project-title">Retro Synthesizer & Soundboard</h3>
+              <p class="project-desc">
+                Mencoba audio-audio untuk website.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-outline preview-project-btn" data-project="3">
+                  <i class="fa-solid fa-eye"></i> Detail
+                </button>
+                <button class="btn btn-sm btn-ghost play-synth-demo" id="demoSynthBtn">
+                  <i class="fa-solid fa-play"></i> Tes Suara
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 5. PHOTO GALLERY ==================== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-camera-retro"></i> Galeri Foto</div>
+          <h2 class="section-title">Koleksi Foto & <span class="gradient-text">Petak Interaktif</span></h2>
+          <p class="section-subtitle">
+            Kumpulan foto disusun dalam grid estetik. <strong>Perhatian:</strong> Beberapa foto menyimpan sesuatu
+            seperti sesuatu yang tak terduga🗿! Silakan mencoba.
+          </p>
+        </div>
+
+        <!-- Interactive Gallery Control Bar -->
+        <div class="gallery-controls-bar">
+          <div class="gallery-filter-pill active" data-filter="all"><i class="fa-solid fa-border-all"></i> Semua Foto
+          </div>
+          <div class="gallery-interactive-hint">
+            <span class="sparkle-icon">✨</span> Klik foto untuk melihat sesuatu!
+          </div>
+        </div>
+
+        <!-- Aesthetic Bento Masonry Photo Grid -->
+        <div class="photo-bento-grid">
+
+          <!-- Photo 2 (Featured Wide) -->
+          <div class="photo-tile tile-wide" data-photo="2">
+            <img src="assets/photo/photo_2.jpeg" alt="Foto Nelsen Verian 2" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag">Foto Kucing?</span>
+              <h4 class="tile-title">Style Foto Kucing</h4>
+              <p class="tile-caption">Klik untuk perbesar tampilan</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="photo-tile tile-tall" data-photo="3">
+            <img src="assets/photo/photo_3.jpeg" alt="Foto Nelsen Verian 3" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag">Foto Pertama Kali Pake Almet🗿</span>
+              <h4 class="tile-title">Pose Estetik?</h4>
+              <p class="tile-caption">Klik untuk perbesar</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </div>
+          </div>
+
+          <!-- Photo 4 (SPECIAL: CURSOR SPAWNER TRIGGER!) -->
+          <div class="photo-tile tile-special cursor-emitter-tile" id="photoEmitterTile" data-photo="4"
+            title="Klik ini untuk melontarkan foto dari kursor!">
+            <div class="special-glow-badge"><i class="fa-solid fa-sparkles"></i> Foto Spesial Emitter!</div>
+            <img src="assets/photo/photo_4.jpeg" alt="Foto Nelsen Verian 4" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag special-tag">Klik Aku: Emitter Mode!</span>
+              <h4 class="tile-title">Menatap Muka Seseorang</h4>
+              <p class="tile-caption">Klik untuk mengaktifkan semburan foto!</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+            </div>
+          </div>
+
+          <!-- Photo 5 -->
+          <div class="photo-tile" data-photo="5">
+            <img src="assets/photo/photo_5.jpeg" alt="Foto Nelsen Verian 5" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag">Foto Pertama Kali Pake Alme pt.2🗿</span>
+              <h4 class="tile-title">Vibe Biasa</h4>
+              <p class="tile-caption">Klik untuk perbesar</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </div>
+          </div>
+
+          <!-- Photo 6 -->
+          <div class="photo-tile" data-photo="6">
+            <img src="assets/photo/photo_6.jpeg" alt="Foto Nelsen Verian 6" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag">Foto Pertama Kali Pake Almet pt.3🗿</span>
+              <h4 class="tile-title">Vibe Biasa pt.2</h4>
+              <p class="tile-caption">Klik untuk perbesar</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </div>
+          </div>
+
+          <!-- Photo 7 (SPECIAL: MEME_6 TRIGGER!) -->
+          <div class="photo-tile tile-tall meme-trigger-tile" id="photoMemeTriggerTile" data-photo="7"
+            title="Awas! Foto ini menyimpan meme rahasia!">
+            <div class="special-glow-badge meme-badge"><i class="fa-solid fa-radiation"></i> Awas!</div>
+            <img src="assets/photo/photo_7.jpeg" alt="Foto Nelsen Verian 7" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag warning-tag">Salam Dari UNTAN</span>
+              <h4 class="tile-title">Surprise 🚨</h4>
+              <p class="tile-caption">Klik jika kamu Gabut!</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-burst"></i></span>
+            </div>
+          </div>
+
+          <!-- Photo 8 -->
+          <div class="photo-tile tile-wide" data-photo="8">
+            <img src="assets/photo/photo_8.jpeg" alt="Foto Nelsen Verian 8" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag">Foto Tidak Sengaja Terjepret</span>
+              <h4 class="tile-title">Almet UNTAN</h4>
+              <p class="tile-caption">Klik untuk perbesar</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </div>
+          </div>
+
+          <!-- Photo 9 -->
+          <div class="photo-tile" data-photo="9">
+            <img src="assets/photo/photo_9.jpeg" alt="Foto Nelsen Verian 9" loading="lazy" class="gallery-img">
+            <div class="tile-overlay">
+              <span class="tile-tag">Foto Orang Ketawa🗿</span>
+              <h4 class="tile-title">Xixixixixi</h4>
+              <p class="tile-caption">Klik untuk perbesar</p>
+              <span class="tile-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 6. CONTACT & SOCIAL MEDIA ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-envelope"></i> Jalin Komunikasi</div>
+          <h2 class="section-title">Hubungi & <span class="gradient-text">Sosial Media</span></h2>
+          <p class="section-subtitle">
+            Follow IG ku ya! Kalau Linkedln gausah, karena cuma formalitas dan belum ngerti cara make.</p>
+        </div>
+
+        <div class="contact-wrapper">
+
+          <!-- Social Media Cards -->
+          <div class="social-cards-grid">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/nelsenverian?xtok=MTZyOWpvbnJ1dmt4aw==" target="_blank"
+              rel="noopener noreferrer" class="social-card glass-panel instagram-card">
+              <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
+              <div class="social-details">
+                <h4>Instagram</h4>
+                <p>@nelsenverian</p>
+              </div>
+              <span class="social-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/lonsert-nonser-6aa351345?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              target="_blank" rel="noopener noreferrer" class="social-card glass-panel linkedin-card">
+              <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="social-details">
+                <h4>LinkedIn</h4>
+                <p>Nelsen Verian</p>
+              </div>
+              <span class="social-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/nevv950-dotcom" target="_blank" rel="noopener noreferrer"
+              class="social-card glass-panel github-card">
+              <div class="social-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="social-details">
+                <h4>GitHub</h4>
+                <p>github.com/nevv950-dotcom</p>
+              </div>
+              <span class="social-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:nelsenvv950@gmail.com" class="social-card glass-panel email-card">
+              <div class="social-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="social-details">
+                <h4>Email</h4>
+                <p>nelsenvv950@gmail.com</p>
+              </div>
+              <span class="social-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+          </div>
+
+          <!-- Interactive Direct Contact Form to Gmail -->
+          <div class="contact-form-panel glass-panel">
+            <div class="form-header">
+              <h3><i class="fa-solid fa-envelope-circle-check"></i> Kirim Pesan ke Gmail</h3>
+              <p>Pesan akan langsung terkirim ke email <strong>nelsenvv950@gmail.com</strong>.</p>
+            </div>
+
+            <form id="contactForm" class="interactive-form">
+              <div class="form-group">
+                <label for="senderName"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+                <input type="text" id="senderName" name="name" placeholder="Contoh: Budi Santoso" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail"><i class="fa-solid fa-at"></i> Alamat Email Anda</label>
+                <input type="email" id="senderEmail" name="email" placeholder="nama@domain.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage"><i class="fa-solid fa-message"></i> Pesan Anda</label>
+                <textarea id="senderMessage" name="message" rows="4"
+                  placeholder="Tuliskan pesan, pertanyaan, saran, atau kolaborasi..."
+                  required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-block" id="sendMessageBtn">
+                  <i class="fa-solid fa-paper-plane"></i> Kirim ke Gmail Sekarang
+                </button>
+              </div>
+              <div class="form-footer-note" style="margin-top: 0.8rem; text-align: center; font-size: 0.82rem; color: var(--text-dim);">
+                <i class="fa-solid fa-shield-halved"></i> Terhubung langsung ke <strong>nelsenvv950@gmail.com</strong>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==================== 7. FOOTER & GRAND FINALE SIGNATURE ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <!-- GRAND FINALE SIGNATURE (STRIKING & CLICKABLE) -->
+      <div class="grand-signature-box" id="grandSignatureBox">
+        <p class="signature-prompt"><i class="fa-solid fa-hand-pointer pulse-animation"></i> Pesan Penutup, dan jangan
+          lupa klik untuk mendapatkan sesuatu!</p>
+        <div class="signature-text-container" id="signatureClickable" title="Klik aku untuk melihat foto photo_1!">
+          <h2 class="striking-signature">
+            "Yang Penting Ada" By <span class="signature-name">Nelsen Verian</span>
+          </h2>
+          <div class="signature-glow-line"></div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-copy">
+          <p>&copy; 2026 <strong>Nelsen Verian</strong> • H1101261030</p>
+          <p class="footer-subtext">Fakultas Matematika dan Ilmu Pengetahuan Alam | Universitas Tanjungpura</p>
+        </div>
+
+        <div class="footer-quick-links">
+          <a href="#hero">Beranda</a>
+          <a href="#about">Tentang</a>
+          <a href="#experience">Riwayat</a>
+          <a href="#projects">Karya</a>
+          <a href="#gallery">Galeri</a>
+          <a href="#contact">Kontak</a>
+        </div>
+
+        <!-- Chaos Mode Button (Easter Egg #5) -->
+        <div class="footer-chaos">
+          <button class="chaos-btn" id="chaosBtn" title="Awas, tombol eksperimen!">
+            <i class="fa-solid fa-skull"></i> MAU TEKAN?
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==================== MODALS & POPUPS ==================== -->
+
+  <!-- 1. GRAND FINALE MODAL (PHOTO_1 SHOWCASE ON SIGNATURE CLICK) -->
+  <div class="modal-overlay" id="signatureModal">
+    <div class="modal-card modal-signature-card glass-panel">
+      <button class="modal-close-btn" id="closeSignatureModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="signature-modal-header">
+        <span class="badge-pill special"><i class="fa-solid fa-crown"></i> Papan Aneh</span>
+        <h3>"Yang Penting Ada", By Nelsen Verian</h3>
+      </div>
+      <div class="signature-modal-body">
+        <div class="showcase-photo-frame">
+          <img src="assets/photo/photo_1.jpeg" alt="Foto Nelsen Verian Utama" class="signature-photo-img">
+          <div class="photo-glow-border"></div>
+        </div>
+        <div class="signature-modal-content">
+          <h4>Nelsen Verian</h4>
+          <p class="student-id">NIM: H1101261030 • FMIPA UNTAN 2026</p>
+          <p class="quote-signature">
+            "Hidup itu seperti membuat website: kadang ada bug, kadang kodenya berantakan,
+            tapi yang terpenting adalah berani mencoba dan <strong>Yang Penting Ada🗿</strong>"
+          </p>
+          <button class="btn btn-primary" id="signatureCheerBtn">
+            <i class="fa-solid fa-hands-clapping"></i> Berikan Tepuk Tangan! 🎉
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 2. MEME_6 SURPRISE MODAL (TRIGGERED BY PHOTO_7 CLICK) -->
+  <div class="modal-overlay" id="meme6Modal">
+    <div class="modal-card modal-meme-card glass-panel">
+      <button class="modal-close-btn" id="closeMeme6Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="meme-modal-header">
+        <span class="badge-pill danger"><i class="fa-solid fa-triangle-exclamation"></i> Easter Egg Ditemukan!</span>
+        <h3>Kamu Terkena Jebakan!</h3>
+      </div>
+      <div class="meme-modal-body">
+        <div class="meme-image-container">
+          <img src="assets/meme/meme_6.png" alt="Easter Egg Meme 6" class="easter-meme-img">
+        </div>
+        <p class="meme-caption">
+          Kamu baru saja mengklik foto spesial di galeri dan memicu <strong>Meme 6</strong>!
+          Koleksi Easter Egg kamu bertambah!
+        </p>
+        <button class="btn btn-primary" id="claimMeme6Btn">
+          <i class="fa-solid fa-face-laugh-squint"></i> Hahaha, Mantap!
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 3. EASTER EGG COLLECTION MODAL (EGG COUNTER) -->
+  <div class="modal-overlay" id="eggTrackerModal">
+    <div class="modal-card modal-eggs-card glass-panel">
+      <button class="modal-close-btn" id="closeEggTrackerModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="eggs-modal-header">
+        <div class="egg-icon-circle"><i class="fa-solid fa-egg"></i></div>
+        <h3>Arsip Rahasia Negara</h3>
+        <p>Temukan ke-6 sesuatu yang tersembunyi di dalam website ini!</p>
+      </div>
+
+      <div class="eggs-grid">
+        <!-- Egg 1 (Meme 1) -->
+        <div class="egg-card" id="eggSlot1">
+          <div class="egg-card-status locked"><i class="fa-solid fa-lock"></i></div>
+          <div class="egg-thumbnail-box">
+            <img src="assets/meme/meme_1.jpg" alt="Meme 1" class="egg-thumb">
+          </div>
+          <h4>Meme #1: Random Click</h4>
+          <p>Klik di area kosong website</p>
+        </div>
+
+        <!-- Egg 2 (Meme 2) -->
+        <div class="egg-card" id="eggSlot2">
+          <div class="egg-card-status locked"><i class="fa-solid fa-lock"></i></div>
+          <div class="egg-thumbnail-box">
+            <img src="assets/meme/meme_2.webp" alt="Meme 2" class="egg-thumb">
+          </div>
+          <h4>Meme #2: Runaway Button</h4>
+          <p>Tangkap tombol yang kabur</p>
+        </div>
+
+        <!-- Egg 3 (Meme 3) -->
+        <div class="egg-card" id="eggSlot3">
+          <div class="egg-card-status locked"><i class="fa-solid fa-lock"></i></div>
+          <div class="egg-thumbnail-box">
+            <img src="assets/meme/meme_3.png" alt="Meme 3" class="egg-thumb">
+          </div>
+          <h4>Meme #3: Peti Rahasia</h4>
+          <p>Buka peti di section Tentang</p>
+        </div>
+
+        <!-- Egg 4 (Meme 4) -->
+        <div class="egg-card" id="eggSlot4">
+          <div class="egg-card-status locked"><i class="fa-solid fa-lock"></i></div>
+          <div class="egg-thumbnail-box">
+            <img src="assets/meme/meme_4.jpg" alt="Meme 4" class="egg-thumb">
+          </div>
+          <h4>Meme #4: Verifikasi NIM</h4>
+          <p>Klik NIM 3 kali berturut-turut</p>
+        </div>
+
+        <!-- Egg 5 (Meme 5) -->
+        <div class="egg-card" id="eggSlot5">
+          <div class="egg-card-status locked"><i class="fa-solid fa-lock"></i></div>
+          <div class="egg-thumbnail-box">
+            <img src="assets/meme/meme_5.png" alt="Meme 5" class="egg-thumb">
+          </div>
+          <h4>Meme #5: Tombol Terlarang</h4>
+          <p>Tekan tombol jangan ditekan di footer</p>
+        </div>
+
+        <!-- Egg 6 (Meme 6) -->
+        <div class="egg-card" id="eggSlot6">
+          <div class="egg-card-status locked"><i class="fa-solid fa-lock"></i></div>
+          <div class="egg-thumbnail-box">
+            <img src="assets/meme/meme_6.png" alt="Meme 6" class="egg-thumb">
+          </div>
+          <h4>Meme #6: Foto Galeri</h4>
+          <p>Klik foto rahasia di galeri</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 4. GENERAL EASTER EGG DISCOVERY MODAL -->
+  <div class="modal-overlay" id="generalEggModal">
+    <div class="modal-card modal-meme-card glass-panel">
+      <button class="modal-close-btn" id="closeGeneralEggModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="meme-modal-header">
+        <span class="badge-pill special" id="generalEggBadge"><i class="fa-solid fa-trophy"></i> Easter Egg
+          Unlocked!</span>
+        <h3 id="generalEggTitle">Meme Ditemukan!</h3>
+      </div>
+      <div class="meme-modal-body">
+        <div class="meme-image-container">
+          <img src="" alt="Easter Egg Meme" class="easter-meme-img" id="generalEggImg">
+        </div>
+        <p class="meme-caption" id="generalEggDesc">Deskripsi meme.</p>
+        <button class="btn btn-primary" id="generalEggBtn">
+          <i class="fa-solid fa-check"></i> Mengerti & Keren!
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 5. LIGHTBOX MODAL FOR NORMAL PHOTOS -->
+  <div class="modal-overlay" id="lightboxModal">
+    <div class="modal-card modal-lightbox-card">
+      <button class="modal-close-btn" id="closeLightboxModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="lightbox-img-box">
+        <img src="" alt="Perbesar Foto" id="lightboxImg">
+      </div>
+      <div class="lightbox-caption" id="lightboxCaption">
+        Foto Portofolio Nelsen Verian
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
