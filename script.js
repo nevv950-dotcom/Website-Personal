@@ -322,32 +322,32 @@ document.addEventListener('DOMContentLoaded', () => {
     1: {
       title: 'Meme #1: Si Klik Sembarang 🎯',
       desc: 'Kamu menemukan meme ini karena mengklik di area kosong website yang tidak terduga!',
-      img: 'assets/meme/meme_1.jpg'
+      img: 'meme_1.jpg'
     },
     2: {
       title: 'Meme #2: Penangkap Tombol Gesit 🏃',
       desc: 'Luar biasa! Kamu berhasil menangkap tombol nakal yang berusaha kabur dari kursor!',
-      img: 'assets/meme/meme_2.webp'
+      img: 'meme_2.webp'
     },
     3: {
       title: 'Meme #3: Rahasia Peti Terlarang 📦',
       desc: 'Kamu nekat membobol peti misteri di bagian Tentang Saya. Keingintahuanmu berbuah meme!',
-      img: 'assets/meme/meme_3.png'
+      img: 'meme_3.png'
     },
     4: {
       title: 'Meme #4: Verifikasi Identitas NIM 🕵️',
       desc: 'Klik 3x pada NIM berhasil membongkar arsip tersembunyi mahasiswa FMIPA UNTAN 2026!',
-      img: 'assets/meme/meme_4.jpg'
+      img: 'meme_4.jpg'
     },
     5: {
       title: 'Meme #5: Tombol Jangan Ditekan 💀',
       desc: 'Sudah dibilang jangan ditekan, tapi kamu tetap menekannya! Selamat menikmati kekacauan!',
-      img: 'assets/meme/meme_5.png'
+      img: 'meme_5.png'
     },
     6: {
       title: 'Meme #6: Perangkap Foto Galeri 📸',
       desc: 'Foto rahasia di galeri ternyata adalah kamuflase dari meme legendaris ke-6!',
-      img: 'assets/meme/meme_6.png'
+      img: 'meme_6.png'
     }
   };
 
@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Create floating meme popup element
       const popup = document.createElement('img');
-      popup.src = 'assets/meme/meme_1.jpg';
+      popup.src = 'meme_1.jpg';
       popup.alt = 'Meme Kejutan 1';
       popup.className = 'meme-click-popup';
       popup.style.left = `${e.clientX}px`;
@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
     openGeneralEggModal(
       'Meme #2: Kamu Menangkap Tombolnya! 🏃💨',
       'Selamat! Dengan refleks secepat kilat, kamu berhasil menangkap tombol nakal ini!',
-      'assets/meme/meme_2.webp'
+      'meme_2.webp'
     );
   });
 
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
     openGeneralEggModal(
       'Meme #3: Peti Rahasia Terbuka! 📦',
       'Peti misteri berhasil dibongkar! Terkandung sebuah meme tentang kehidupan seorang programmer.',
-      'assets/meme/meme_3.png'
+      'meme_3.png'
     );
   });
 
@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
       openGeneralEggModal(
         'Meme #4: Identitas Mahasiswa Terverifikasi! 🎓',
         'NIM: H1101261030 terkonfirmasi asli! FMIPA Universitas Tanjungpura angkatan 2026.',
-        'assets/meme/meme_4.jpg'
+        'meme_4.jpg'
       );
     } else {
       showToast(`Klik NIM lagi (${nimClicks}/3)...`);
@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
     openGeneralEggModal(
       'Meme #5: Mode Chaos Diaktifkan! 🌈',
       'Warna website sedang bermutasi secara liar! Klik tombol lagi untuk menenangkan situasi.',
-      'assets/meme/meme_5.png'
+      'meme_5.png'
     );
   });
 
@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function spawnFloatingCursorPhoto(x, y) {
     const photo = document.createElement('img');
-    photo.src = 'assets/photo/photo_4.jpeg';
+    photo.src = 'photo_4.jpeg';
     photo.alt = 'Floating Avatar';
     photo.className = 'cursor-floating-photo';
     photo.style.left = `${x}px`;
